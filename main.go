@@ -14,7 +14,7 @@ func main() {
 	}
 
 	_, err := natsEncodedConn.Subscribe(">", func(subj string, reply string, msg []byte) {
-		log.Println(string(msg))
+		log.Println(subj, string(msg))
 	})
 	if err != nil {
 		log.Panic(err.Error())
